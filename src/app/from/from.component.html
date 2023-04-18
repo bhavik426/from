@@ -1,0 +1,602 @@
+<div class="d-flex">
+    <form class="m-auto border border-dark p-5" action="" [formGroup]="form">
+        <h3>Student Details :</h3>
+
+        <div>
+            <div formGroupName="name" class="d-flex">
+
+                <div class="w-25 ms-0 m-auto">
+                    <label class="mt-2" for="first">First Name: </label>
+                    <input class="w-100 mt-2" type="text" formControlName="first">
+
+                    <ng-container *ngIf="firstn?.invalid&&(firstn?.dirty || firstn?.touched)">
+                        <small class="text-danger" *ngIf="firstn?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+
+                        <small class="text-danger" *ngIf="firstn?.errors?.['minlength']">
+                            First Name Should be atleast 3 characters long.
+                        </small>
+                    </ng-container>
+                </div>
+
+                <div class="w-25 m-auto">
+                    <label class="mt-2" for="middle">Middle Name : </label>
+                    <input class="w-100 mt-2" type="text" formControlName="middle">
+
+                    <ng-container *ngIf="middlen?.invalid&&(middlen?.dirty||middlen?.touched)">
+                        <small class="text-danger" *ngIf="middlen?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+
+                        <small class="text-danger" *ngIf="middlen?.errors?.['minlength']">
+                            Middle Name Should be atleast 3 characters long.
+                        </small>
+                    </ng-container>
+                </div>
+
+                <div class="w-25 me-0 m-auto">
+                    <label class="mt-2" for="last">Last Name : </label>
+                    <input class="w-100 mt-2" type="text" formControlName="last">
+
+                    <ng-container *ngIf="lastn?.invalid&&(lastn?.dirty||lastn?.touched)">
+                        <small class="text-danger" *ngIf="lastn?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+
+                        <small class="text-danger" *ngIf="lastn?.errors?.['minlength']">
+                            Last Name Should be atleast 3 characters long.
+                        </small>
+                    </ng-container>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div>
+
+            <label class="mt-2" for="dob">DOB : </label>
+            <input class="w-100 mt-2" type="date" formControlName="dob">
+
+            <ng-container *ngIf="dob?.invalid&&(dob?.dirty||dob?.touched)">
+                <small class="text-danger" *ngIf="dob?.errors?.['required']">
+                    * This Field is required.
+                </small>
+            </ng-container>
+
+        </div>
+
+        <div>
+
+            <label class="mt-2" for="placeofbirth">Place of Birth : </label>
+            <input class="w-100 mt-2" type="text" formControlName="placeofbirth">
+
+            <ng-container *ngIf="placeofbirth?.invalid&&(placeofbirth?.dirty||placeofbirth?.touched)">
+                <small class="text-danger" *ngIf="placeofbirth?.errors?.['required']">
+                    * This Field is required.
+                </small>
+            </ng-container>
+
+        </div>
+
+        <div>
+
+            <label class="mt-2" for="firstlanguage">First Language : </label>
+            <input class="w-100 mt-2" type="text" formControlName="firstlanguage">
+
+            <ng-container *ngIf="firstlanguage?.invalid&&(firstlanguage?.dirty||firstlanguage?.touched)">
+                <small class="text-danger" *ngIf="firstlanguage?.errors?.['required']">
+                    * This Field is required.
+                </small>
+            </ng-container>
+
+        </div>
+
+        <div formGroupName="address" class="p-3">
+
+            <h5 class="mt-2">Address : </h5>
+            <div class="d-flex">
+
+                <div class="w-25 ms-0 m-auto">
+                    <label class="mt-2" for="city">City : </label>
+                    <input class="w-100 mt-2" type="text" formControlName="city">
+
+                    <ng-container *ngIf="city?.invalid&&(city?.dirty||city?.touched)">
+                        <small class="text-danger" *ngIf="city?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+                    </ng-container>
+                </div>
+
+                <div class="w-25 m-auto">
+
+                    <label class="mt-2" for="pin">Pin : </label>
+                    <input class="w-100 mt-2" type="text" formControlName="pin">
+
+                    <ng-container *ngIf="pin?.invalid&&(pin?.dirty||pin?.touched)">
+                        <small class="text-danger" *ngIf="pin?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+
+                        <small class="text-danger" *ngIf="pin?.errors?.['minlength']">
+                            Pin Should be atleast 6 characters long.
+                        </small>
+
+                        <small class="text-danger" *ngIf="pin?.errors?.['maxlength']">
+                            Pin Should be atmost 6 characters long.
+                        </small>
+
+                        <small class="text-danger" *ngIf="pin?.errors?.['pattern']">
+                            Please Enter Proper Pincode.
+                        </small>
+                    </ng-container>
+
+                </div>
+
+                <div class="w-25 me-0 m-auto">
+
+                    <label class="mt-2" for="state">State : </label>
+                    <input class="w-100 mt-2" type="text" formControlName="state">
+
+                    <ng-container *ngIf="state?.invalid&&(state?.dirty||state?.touched)">
+                        <small class="text-danger" *ngIf="state?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+                    </ng-container>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <label class="mt-2" for="country">Country : </label>
+                <input class="w-100 mt-2" type="text" formControlName="country">
+
+                <ng-container *ngIf="country?.invalid&&(country?.dirty||country?.touched)">
+                    <small class="text-danger" *ngIf="country?.errors?.['required']">
+                        * This Field is required.
+                    </small>
+                </ng-container>
+
+            </div>
+
+
+        </div>
+
+        <div formGroupName="father">
+
+            <h3 class="mt-5">Father's Information :</h3>
+            <div formGroupName="fullname" class="d-flex">
+
+                <div class="w-25 ms-0 m-auto">
+
+                    <label class="mt-2" for="first">First Name: </label>
+                    <input class="w-100 mt-2" type="text" formControlName="first">
+
+                    <ng-container *ngIf="firstf?.invalid&&(firstf?.dirty||firstf?.touched)">
+                        <small class="text-danger" *ngIf="firstf?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+
+                        <small class="text-danger" *ngIf="firstf?.errors?.['minlength']">
+                            First Name Should be atleast 3 characters long.
+                        </small>
+                    </ng-container>
+
+                </div>
+
+                <div class="w-25 m-auto">
+
+                    <label class="mt-2" for="middle">Middle Name : </label>
+                    <input class="w-100 mt-2" type="text" formControlName="middle">
+
+                    <ng-container *ngIf="middlef?.invalid&&(middlef?.dirty||middlef?.touched)">
+                        <small class="text-danger" *ngIf="middlef?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+
+                        <small class="text-danger" *ngIf="middlef?.errors?.['minlength']">
+                            Middle Name Should be atleast 3 characters long.
+                        </small>
+                    </ng-container>
+
+                </div>
+
+                <div class="w-25 me-0 m-auto">
+
+                    <label class="mt-2" for="last">Last Name : </label>
+                    <input class="w-100 mt-2" type="text" formControlName="last">
+
+                    <ng-container *ngIf="lastf?.invalid&&(lastf?.dirty||lastf?.touched)">
+                        <small class="text-danger" *ngIf="lastf?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+
+                        <small class="text-danger" *ngIf="lastf?.errors?.['minlength']">
+                            Last Name Should be atleast 3 characters long.
+                        </small>
+                    </ng-container>
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <label class="mt-2" for="email">Email : </label>
+                <input class="w-100 mt-2" type="email" formControlName="email">
+
+                <ng-container *ngIf="emailf?.invalid&&(emailf?.dirty||emailf?.touched)">
+                    <small class="text-danger" *ngIf="emailf?.errors?.['required']">
+                        * This Field is required.
+                    </small>
+                </ng-container>
+
+            </div>
+
+            <div>
+
+                <label class="mt-2" for="education">Education Details : </label>
+                <input class="w-100 mt-2" type="text" formControlName="education">
+
+                <ng-container *ngIf="educationf?.invalid&&(educationf?.dirty||educationf?.touched)">
+                    <small class="text-danger" *ngIf="educationf?.errors?.['required']">
+                        * This Field is required.
+                    </small>
+                </ng-container>
+
+            </div>
+
+            <div>
+
+                <label class="mt-2" for="profession">Profession : </label>
+                <input class="w-100 mt-2" type="text" formControlName="profession">
+
+                <ng-container *ngIf="professionf?.invalid&&(professionf?.dirty||professionf?.touched)">
+                    <small class="text-danger" *ngIf="professionf?.errors?.['required']">
+                        * This Field is required.
+                    </small>
+                </ng-container>
+
+            </div>
+
+            <div>
+
+                <label class="mt-2" for="designation">Designation : </label>
+                <input class="w-100 mt-2" type="text" formControlName="designation">
+
+                <ng-container *ngIf="designationf?.invalid&&(designationf?.dirty||designationf?.touched)">
+                    <small class="text-danger" *ngIf="designationf?.errors?.['required']">
+                        * This Field is required.
+                    </small>
+                </ng-container>
+
+            </div>
+
+            <div>
+
+                <label class="mt-2" for="phone">Phone : </label>
+                <input class="w-100 mt-2" type="text" formControlName="phone">
+
+                <ng-container *ngIf="phonef?.invalid&&(phonef?.dirty||phonef?.touched)">
+                    <small class="text-danger" *ngIf="phonef?.errors?.['required']">
+                        * This Field is required.
+                    </small>
+
+                    <small class="text-danger" *ngIf="phonef?.errors?.['minlength']">
+                        Phone No Should be atleast 10 characters long.
+                    </small>
+
+                    <small class="text-danger" *ngIf="phonef?.errors?.['maxlength']">
+                        Phone No Should be atmost 10 characters long.
+                    </small>
+
+                    <small class="text-danger" *ngIf="phonef?.errors?.['pattern']">
+                        Please Enter Proper Phone No.
+                    </small>
+                </ng-container>
+            </div>
+
+        </div>
+
+        <div formGroupName="mother">
+
+            <h3 class="mt-5">Mother's Information :</h3>
+            <div formGroupName="fullname" class="d-flex">
+
+                <div class="w-25 ms-0 m-auto">
+
+                    <label class="mt-2" for="first">First Name: </label>
+                    <input class="w-100 mt-2" type="text" formControlName="first">
+
+                    <ng-container *ngIf="firstm?.invalid&&(firstm?.dirty||firstm?.touched)">
+                        <small class="text-danger" *ngIf="firstm?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+
+                        <small class="text-danger" *ngIf="firstm?.errors?.['minlength']">
+                            First Name Should be atleast 3 characters long.
+                        </small>
+
+                    </ng-container>
+
+                </div>
+
+                <div class="w-25 m-auto">
+
+                    <label class="mt-2" for="middle">Middle Name : </label>
+                    <input class="w-100 mt-2" type="text" formControlName="middle">
+
+                    <ng-container *ngIf="middlem?.invalid&&(middlem?.dirty||middlem?.touched)">
+                        <small class="text-danger" *ngIf="middlem?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+
+                        <small class="text-danger" *ngIf="middlem?.errors?.['minlength']">
+                            Middle Name Should be atleast 3 characters long.
+                        </small>
+                    </ng-container>
+
+                </div>
+
+                <div class="w-25 me-0 m-auto">
+
+                    <label class="mt-2" for="last">Last Name : </label>
+                    <input class="w-100 mt-2" type="text" formControlName="last">
+
+                    <ng-container *ngIf="lastm?.invalid&&(lastm?.dirty||lastm?.touched)">
+                        <small class="text-danger" *ngIf="lastm?.errors?.['required']">
+                            * This Field is required.
+                        </small>
+
+                        <small class="text-danger" *ngIf="lastm?.errors?.['minlength']">
+                            Last Name Should be atleast 3 characters long.
+                        </small>
+                    </ng-container>
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <label class="mt-2" for="email">Email : </label>
+                <input class="w-100 mt-2" type="email" formControlName="email">
+
+                <ng-container *ngIf="emailm?.invalid&&(emailm?.dirty||emailm?.touched)">
+                    <small class="text-danger" *ngIf="emailm?.errors?.['required']">
+                        * This Field is required.
+                    </small>
+                </ng-container>
+
+            </div>
+
+            <div>
+
+                <label class="mt-2" for="education">Education Details : </label>
+                <input class="w-100 mt-2" type="text" formControlName="education">
+
+                <ng-container *ngIf="educationm?.invalid&&(educationm?.dirty||educationm?.touched)">
+                    <small class="text-danger" *ngIf="educationm?.errors?.['required']">
+                        * This Field is required.
+                    </small>
+                </ng-container>
+
+            </div>
+
+            <div>
+
+                <label class="mt-2" for="profession">Profession : </label>
+                <input class="w-100 mt-2" type="text" formControlName="profession">
+
+                <ng-container *ngIf="professionm?.invalid&&(professionm?.dirty||professionm?.touched)">
+                    <small class="text-danger" *ngIf="professionm?.errors?.['required']">
+                        * This Field is required.
+                    </small>
+                </ng-container>
+
+            </div>
+
+            <div>
+
+                <label class="mt-2" for="designation">Designation : </label>
+                <input class="w-100 mt-2" type="text" formControlName="designation">
+
+                <ng-container *ngIf="designationm?.invalid&&(designationm?.dirty||designationm?.touched)">
+                    <small class="text-danger" *ngIf="designationm?.errors?.['required']">
+                        * This Field is required.
+                    </small>
+                </ng-container>
+
+            </div>
+
+            <div>
+
+                <label class="mt-2" for="phone">Phone : </label>
+                <input class="w-100 mt-2" type="text" formControlName="phone">
+
+                <ng-container *ngIf="phonem?.invalid&&(phonem?.dirty||phonem?.touched)">
+                    <small class="text-danger" *ngIf="phonem?.errors?.['required']">
+                        * This Field is required.
+                    </small>
+
+                    <small class="text-danger" *ngIf="phonem?.errors?.['minlength']">
+                        Phone No Should be atleast 10 characters long.
+                    </small>
+
+                    <small class="text-danger" *ngIf="phonem?.errors?.['maxlength']">
+                        Phone No Should be atmost 10 characters long.
+                    </small>
+
+                    <small class="text-danger" *ngIf="phonem?.errors?.['pattern']">
+                        Please Enter Proper Phone No.
+                    </small>
+                </ng-container>
+
+            </div>
+
+        </div>
+
+        <div formArrayName="emergency">
+
+            <h3 class="mt-5">Emergency Details :</h3>
+
+            <ng-container *ngFor="let item of emergency.controls;let i = index">
+
+                <div [formGroupName]="i">
+
+                    <h6 class="mt-3">Contact {{i+1}} :</h6>
+
+                    <div>
+                        <label class="mt-2" for="relation">Relation : </label>
+                        <select class="w-100 mt-2" formControlName="relation">
+
+                            <ng-container *ngFor="let item1 of relation;let i1 = index">
+                                <option value="{{item1}}">{{item1}}</option>
+                            </ng-container>
+                        </select>
+
+                        <ng-container
+                            *ngIf="item.get('relation')?.invalid && (item.get('relation')?.dirty||item.get('relation')?.touched)">
+                            <small class="text-danger" *ngIf="item.get('relation')?.errors?.['required']">
+                                * This Field is required.
+                            </small>
+                        </ng-container>
+
+                    </div>
+
+                    <div>
+                        <label class="mt-2" for="number">Contact Number : </label>
+                        <input class="w-100 mt-2" type="text" formControlName="number">
+
+                        <ng-container
+                            *ngIf="item.get('number')?.invalid&&(item.get('number')?.dirty||item.get('number')?.touched)">
+                            <small class="text-danger" *ngIf="item.get('number')?.errors?.['required']">
+                                * This Field is required.
+                            </small>
+
+                            <small class="text-danger" *ngIf="item.get('number')?.errors?.['minlength']">
+                                Phone No Should be atleast 10 characters long.
+                            </small>
+
+                            <small class="text-danger" *ngIf="item.get('number')?.errors?.['maxlength']">
+                                Phone No Should be atmost 10 characters long.
+                            </small>
+
+                            <small class="text-danger" *ngIf="item.get('number')?.errors?.['pattern']">
+                                Please Enter Proper Phone No.
+                            </small>
+                        </ng-container>
+                    </div>
+
+                </div>
+            </ng-container>
+
+            <div class="d-flex">
+                <input class="mt-2 w-25 btn btn-secondary" type="button" (click)="newcontact()" value="+ Add Contact">
+            </div>
+        </div>
+        <div>
+            <input class="w-100 mt-2 btn btn-primary" type="button" value="Submit" [disabled]="form.invalid" (click)="data()">
+        </div>
+    </form>
+</div>
+<div class="d-flex mt-4">
+    <table class="text-center m-auto">
+
+        <tr>
+            <th colspan="10">Student Table</th>
+            <th colspan="8">Father Details</th>
+            <th colspan="8">Mother Details</th>
+        </tr>
+        <tr>
+            <th colspan="3">Name</th>
+            <th rowspan="2">DOB</th>
+            <th rowspan="2">Place Of Birth</th>
+            <th rowspan="2">First Language</th>
+            <th colspan="4">Address</th>
+            <th colspan="3">FullName</th>
+            <th rowspan="2">Email</th>
+            <th rowspan="2">Education Details</th>
+            <th rowspan="2">Profession</th>
+            <th rowspan="2">Designation</th>
+            <th rowspan="2">Phone</th>
+            <th colspan="3">FullName</th>
+            <th rowspan="2">Email</th>
+            <th rowspan="2">Education Details</th>
+            <th rowspan="2">Profession</th>
+            <th rowspan="2">Designation</th>
+            <th rowspan="2">Phone</th>
+        </tr>
+        <tr>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Pin</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+        </tr>
+
+        <ng-container *ngFor="let item of alldata">
+            <tr>
+                <td> {{item.name.first}} </td>
+                <td> {{item.name.middle}} </td>
+                <td> {{item.name.last}} </td>
+                <td> {{item.dob}} </td>
+                <td> {{item.placeofbirth}} </td>
+                <td> {{item.firstlanguage}} </td>
+                <td> {{item.address.city}} </td>
+                <td> {{item.address.state}} </td>
+                <td> {{item.address.country}} </td>
+                <td> {{item.address.pin}} </td>
+                <td> {{item.father.fullname.first}} </td>
+                <td> {{item.father.fullname.middle}} </td>
+                <td> {{item.father.fullname.last}} </td>
+                <td> {{item.father.email}} </td>
+                <td> {{item.father.education}} </td>
+                <td> {{item.father.profession}} </td>
+                <td> {{item.father.designation}} </td>
+                <td> {{item.father.phone}} </td>
+                <td> {{item.mother.fullname.first}} </td>
+                <td> {{item.mother.fullname.middle}} </td>
+                <td> {{item.mother.fullname.last}} </td>
+                <td> {{item.mother.email}} </td>
+                <td> {{item.mother.education}} </td>
+                <td> {{item.mother.profession}} </td>
+                <td> {{item.mother.designation}} </td>
+                <td> {{item.mother.phone}} </td>
+            </tr>
+        </ng-container>
+    </table>
+    <table>
+        <tr>
+            <th colspan='2'>Emergency Contact Information</th>
+        </tr>
+        <tr *ngFor="let item of alldata">
+            <td>
+                <tr>
+                    <th> Relation </th>
+                    <th> Number </th>
+                </tr>
+                <ng-container *ngFor="let i of item.emergency">
+                    <tr>
+                        <td> {{i.relation}} </td>
+                        <td> {{i.number}} </td>
+                    </tr>
+                </ng-container>
+            </td>
+        </tr>
+
+    </table>
+</div>
